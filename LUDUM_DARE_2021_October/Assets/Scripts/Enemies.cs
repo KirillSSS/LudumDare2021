@@ -11,25 +11,35 @@ public class Enemies : MonoBehaviour
 
     public Transform player;
 
+    private bool isInWrongPos = false;
+    private bool isAttacking = false;
+    private bool isStopped = true;
+
+    private Vector3 pointUntilStop;
     private Vector3 dir;
     private Vector2 move;
-    private Rigidbody2D rb;
-    private bool isStopped = true;
-    private Vector3 pointUntilStop;
-    private bool isAttacking = false;
     private Vector2 startPosition;
-    private bool isInWrongPos = false;
+
+    private Rigidbody2D rb;
     private float progress;
+    private Animator anim;
 
     [SerializeField] private SpriteRenderer sprite;
 
     private void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+
         dir = transform.position;
         startPosition = transform.position;
         
         //lives = health;
+    }
+    private States State
+    {
+        get { return (States)anim.GetInteger("state"); }
+        set { anim.SetInteger("state", (int)value); }
     }
 
     private void Update()
@@ -65,7 +75,9 @@ public class Enemies : MonoBehaviour
             if (isStopped && !isInWrongPos)
             {
                 //Debug.Log("WHY  " + dir + " and " + transform.position);
-                
+
+                StartCoroutine(Wait());
+
                 int r = Random.Range(-1, 1);
                 dir.x = r * walkDistance;
 
@@ -120,7 +132,6 @@ public class Enemies : MonoBehaviour
         if (Vector2.Distance(startPosition, pointUntilStop) <= walkRange)
         {
             rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
-            //print(transform.position);
         }
         else if ((Vector2)transform.position != startPosition && isInWrongPos)
         {
@@ -135,7 +146,7 @@ public class Enemies : MonoBehaviour
         }
         //print(isStopped+ " and "+ dir + "------------" + transform.position);
 
-        if (dir.x > player.position.x)
+        if (dir.x < player.position.x)
             sprite.flipX = false;
         else
             sprite.flipX = true;
@@ -145,5 +156,15 @@ public class Enemies : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(startPosition, walkRange);
+    }
+
+    private IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(50f);
+    }
+
+    public enum States
+    {
+        run
     }
 }
