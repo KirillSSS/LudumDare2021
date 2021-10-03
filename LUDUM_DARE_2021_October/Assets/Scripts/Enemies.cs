@@ -97,7 +97,7 @@ public class Enemies : MonoBehaviour
                 move = dir;
                 pointUntilStop = transform.position + dir;
 
-                print("|||||||||||||||" + pointUntilStop + "|||||||||||||||" + startPosition);
+                //print("|||||||||||||||" + pointUntilStop + "|||||||||||||||" + startPosition);
                 //print("pp");
             }
 
@@ -146,7 +146,7 @@ public class Enemies : MonoBehaviour
         }
         //print(isStopped+ " and "+ dir + "------------" + transform.position);
 
-        if (dir.x < player.position.x)
+        if (dir.x < 0)
             sprite.flipX = false;
         else
             sprite.flipX = true;

@@ -92,6 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7984885334475857093}
+  - component: {fileID: -2500899004551294105}
   - component: {fileID: 7984885334475857082}
   - component: {fileID: 7984885334475857083}
   - component: {fileID: 7984885334475857092}
@@ -99,7 +100,7 @@ GameObject:
   - component: {fileID: 7984885334475857095}
   m_Layer: 0
   m_Name: Witch
-  m_TagString: Untagged
+  m_TagString: Enemy1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,6 +120,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-2500899004551294105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7984885334475857080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85cdd58f08c347c40b25d07807d63512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7984885334475857082
 MonoBehaviour:
   m_ObjectHideFlags: 0
