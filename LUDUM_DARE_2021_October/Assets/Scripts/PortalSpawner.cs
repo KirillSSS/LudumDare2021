@@ -70,10 +70,7 @@ public class PortalSpawner : MonoBehaviour
         }
     }
 
-    public void LaunchWave()
-    {
-        StartCoroutine(SpawnEnemyInWave());
-    }
+    public void LaunchWave() => StartCoroutine(SpawnEnemyInWave());
 }
 
 

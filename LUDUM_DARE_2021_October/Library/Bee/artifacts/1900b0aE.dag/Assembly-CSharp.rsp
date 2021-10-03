@@ -349,6 +349,7 @@
 "Assets/Scripts/Play_Button.cs"
 "Assets/Scripts/PortalEnemies.cs"
 "Assets/Scripts/PortalSpawner.cs"
+"Assets/Scripts/Torch.cs"
 -langversion:8.0
 
 /deterministic

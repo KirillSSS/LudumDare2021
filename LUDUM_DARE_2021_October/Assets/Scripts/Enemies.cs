@@ -9,7 +9,7 @@ public class Enemies : MonoBehaviour
     [SerializeField] private float walkDistance = 2f;
     [SerializeField] private int health = 5;
 
-    public Transform player;
+    private GameObject player;
 
     private bool isInWrongPos = false;
     private bool isAttacking = false;
@@ -31,6 +31,8 @@ public class Enemies : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
+        player = GameObject.FindGameObjectsWithTag("Boiler")[0];
+
         dir = transform.position;
         startPosition = transform.position;
         
@@ -44,9 +46,9 @@ public class Enemies : MonoBehaviour
 
     private void Update()
     {   
-        if (Vector2.Distance(player.position, transform.position) <= walkRange)
+        if (Vector2.Distance(player.transform.position, transform.position) <= walkRange)
         {
-            dir = player.position - transform.position;
+            dir = player.transform.position - transform.position;
 
             //Debug.Log(dir);
 
