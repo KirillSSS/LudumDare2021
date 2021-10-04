@@ -11,6 +11,7 @@ TagManager:
   - Add
   - Minus
   - Pentagram
+  - Candy
   layers:
   - Default
   - TransparentFX

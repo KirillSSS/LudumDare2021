@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 646202281098666735}
   m_Layer: 0
   m_Name: Candy
-  m_TagString: Untagged
+  m_TagString: Candy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 6050339100200736044}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 51.038235, y: -31.306385, z: -32.274487}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 6050339101131875252}
   m_Father: {fileID: 0}
@@ -58,9 +58,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.002284368, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.14600436
 --- !u!1 &6050339101131875253
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,8 +132,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -3939709940441476875, guid: cbffe37cab17dff45aadddc052c6b019, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
