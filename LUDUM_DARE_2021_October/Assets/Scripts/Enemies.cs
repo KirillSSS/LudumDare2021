@@ -24,14 +24,25 @@ public class Enemies : MonoBehaviour
     private float progress;
     private Animator anim;
 
+    [SerializeField] private GameObject character;
+
     [SerializeField] private SpriteRenderer sprite;
+
+    public void getDamaged()
+    {
+        health--;
+        if (health == 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
-        player = GameObject.FindGameObjectsWithTag("Boiler")[0];
+        player = GameObject.FindGameObjectsWithTag("Hero")[0];
 
         dir = transform.position;
         startPosition = transform.position;
@@ -127,6 +138,26 @@ public class Enemies : MonoBehaviour
             isStopped = true;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.tag == "Minus")
+        {
+            if (collider.gameObject.GetComponent<AddCandy>().candy > 0)
+            {
+                collider.gameObject.GetComponent<AddCandy>().minus();
+                getDamaged();
+
+            }
+        }
+    }
+
+    private void OnDestroy()
+    {
+        print("AAAAAAAAAAAAAAAAAAAAAAAAA");
+        StartCoroutine(Died());
+    }
+
     private void Move(Vector2 direction)
     {
         //print("-------" + pointUntilStop + " ---------- " + startPosition);
@@ -160,6 +191,13 @@ public class Enemies : MonoBehaviour
         Gizmos.DrawWireSphere(startPosition, walkRange);
     }
 
+
+    private IEnumerator Died()
+    {
+        print("BBBBBBBBBBBBBBBBBBBBBBBBBBBB");
+        yield return new WaitForSeconds(5f);
+        Instantiate(character, startPosition, Quaternion.identity);
+    }
     private IEnumerator Wait()
     {
         yield return new WaitForSeconds(50f);

@@ -23,7 +23,7 @@ public class Enemies_dop : MonoBehaviour
     }*/
     private void OnCollisionEnter2D(Collision2D collision)
     {
-       // Debug.Log(collision.tag);
+        // Debug.Log(collision.tag);
         if (collision.gameObject.tag == "Boiler")
         {
             GameObject.Find("Hero").GetComponent<Hero>().minusBoiler();
@@ -31,4 +31,18 @@ public class Enemies_dop : MonoBehaviour
         }
 
     }
-}
+
+    /*private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.tag == "Minus")
+        {
+            if (collider.gameObject.GetComponent<AddCandy>().candy > 0)
+            {
+                collider.gameObject.GetComponent<AddCandy>().minus();
+                gameObject.GetComponent<Enemies>().getDamaged();
+                
+            }
+        }
+    }*/
+
+}   

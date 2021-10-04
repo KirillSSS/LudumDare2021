@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1745408433182392952, guid: 7207bdc052d8a2d4c87229d691daf1b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -114,7 +114,7 @@ Transform:
   m_GameObject: {fileID: 7984885334475857080}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.75, y: -4.11, z: 0}
-  m_LocalScale: {x: 1.5258546, y: 1.5258546, z: 1.5258546}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children:
   - {fileID: 7984885333853089886}
   m_Father: {fileID: 0}
@@ -144,11 +144,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2bea88acdbafe541a5c57562b27eebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.3
+  speed: 0.6
   walkRange: 3
   walkDistance: 1
   health: 5
-  player: {fileID: 0}
   sprite: {fileID: 7984885333853089887}
 --- !u!50 &7984885334475857083
 Rigidbody2D:

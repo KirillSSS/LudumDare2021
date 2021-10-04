@@ -91,6 +91,8 @@ public class Hero : MonoBehaviour
         }
     }
 
+   
+
     private void Awake()
     {
         Debug.Log("lol");
@@ -140,6 +142,16 @@ public class Hero : MonoBehaviour
         if (collider.tag == "Pentagram")
         {
             giveBoiler();
+        }
+
+        if (collider.tag == "Add")
+        {
+            if (Input.GetKeyDown(KeyCode.Space) && candy > 0)
+            {
+                candy--;
+                Score.GetComponent<Text>().text = candy.ToString() + "/" + candyMax.ToString();
+                collider.gameObject.GetComponent<AddCandy>().add();
+            }
         }
 
     }

@@ -8,6 +8,8 @@ TagManager:
   - Hero
   - Boiler
   - Enemy1
+  - Add
+  - Minus
   layers:
   - Default
   - TransparentFX

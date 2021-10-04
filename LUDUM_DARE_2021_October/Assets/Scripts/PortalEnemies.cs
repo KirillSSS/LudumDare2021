@@ -5,7 +5,7 @@ using UnityEngine;
 public class PortalEnemies : MonoBehaviour
 {
     [SerializeField] private float speed = 5f;
-    [SerializeField] private int health = 5;
+    [SerializeField] private float health = 15;
 
     private Vector3 center;
 
@@ -86,5 +86,28 @@ public class PortalEnemies : MonoBehaviour
     public enum States
     {
         run
+    }
+
+    public void getDamaged()
+    {
+        health -= 0.001f;
+        if (health == 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collider)
+    {
+        if (collider.tag == "Minus")
+        {
+            Debug.Log("Minus");
+            if (collider.gameObject.GetComponent<AddCandy>().candy > 0)
+            {
+                collider.gameObject.GetComponent<AddCandy>().minus();
+                getDamaged();
+
+            }
+        }
     }
 }
