@@ -53,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1fd8d9509aad3af4a8aa0f8570cbee83, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -157,7 +157,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405351525830864034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.81, z: -1.33}
+  m_LocalPosition: {x: 0, y: 0.781, z: -1.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1405351526288215177}
@@ -174,8 +174,8 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.59964436, b: 0.17647058, a: 1}
-  m_Intensity: 1.29
+  m_Color: {r: 0.9245283, g: 0.50126547, b: 0.20409395, a: 1}
+  m_Intensity: 1.4
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -537,7 +537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightIntensity: 1.5
   lightPercent: 0.001
-  candy: 100
+  candy: 5
   candyMax: 5000
 --- !u!68 &1405351526288215179
 EdgeCollider2D:

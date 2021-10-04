@@ -179,11 +179,11 @@ public class Enemies : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
-    {
-        print("AAAAAAAAAAAAAAAAAAAAAAAAA");
-        StartCoroutine(Died());
-    }
+    //private void OnDestroy()
+    //{
+    //    print("AAAAAAAAAAAAAAAAAAAAAAAAA");
+    //    StartCoroutine(Died());
+    //}
 
     private void Move(Vector2 direction)
     {

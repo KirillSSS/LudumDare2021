@@ -10,11 +10,11 @@ public class Hero : MonoBehaviour
 
     public int candy = 0, candyMax;
 
-    [SerializeField] private GameObject Pause_menu, Score, ScoreBoiler, Boiler, space, torch, scoreTorch;
+    [SerializeField] private GameObject Pause_menu, Score, ScoreBoiler, Boiler, space, torch, scoreTorch, win;
     //GameObject Score = GameObject.Find("Score_text");
     private Paues_end end;
     private bool inBoiler = false, inAdd = false;
-    private Collider2D coll;
+    public Collider2D coll;
     //private Score_te score;
 
 
@@ -102,6 +102,7 @@ public class Hero : MonoBehaviour
             
             scoreTorch.GetComponent<Text>().text = coll.gameObject.GetComponent<AddCandy>().candy.ToString();
             candy--;
+            Score.GetComponent<Text>().text = candy.ToString() + "/" + candyMax.ToString();
         }
     }
 
@@ -143,24 +144,24 @@ public class Hero : MonoBehaviour
 
     }
     
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        /*if (collision.tag == "Pentagram")
-        {
-            giveBoiler();
-        }*/
+    //private void OnTriggerStay2D(Collider2D collision)
+    //{
+    //    /*if (collision.tag == "Pentagram")
+    //    {
+    //        giveBoiler();
+    //    }*/
 
-        if (collision.tag == "Add")
-        {
-            if (Input.GetKeyDown(KeyCode.Space) && candy > 0)
-            {
-                candy--;
-                Score.GetComponent<Text>().text = candy.ToString() + "/" + candyMax.ToString();
-                collision.gameObject.GetComponent<AddCandy>().add();
-            }
-        }
+    //    if (collision.tag == "Add")
+    //    {
+    //        if (Input.GetKeyDown(KeyCode.Space) && candy > 0)
+    //        {
+    //            candy--;
+    //            Score.GetComponent<Text>().text = candy.ToString() + "/" + candyMax.ToString();
+    //            collision.gameObject.GetComponent<AddCandy>().add();
+    //        }
+    //    }
 
-    }
+    //}
 
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -221,11 +222,15 @@ public class Hero : MonoBehaviour
     {
         State = States.idle;
         Score.GetComponent<Text>().text = candy.ToString() + "/" + candyMax.ToString();
+        scoreTorch.GetComponent<Text>().text = coll.gameObject.GetComponent<AddCandy>().candy.ToString();
         //Debug.Log("kek");
         if (Input.GetButton("Vertical")) runVertical();
         if (Input.GetButton("Horizontal")) runHorizontal();
         if (Input.GetKeyDown(KeyCode.Space)) giveBoiler();
         if (Input.GetKeyDown(KeyCode.Space)) addTourch();
+
+        if (candy == candyMax)
+            win.SetActive(true);
     }
 
     private void FixedUpdate()

@@ -29,7 +29,7 @@ public class Torch : MonoBehaviour
 
     public void minus()
     {
-        candy -= 0.001f;
+        candy -= 0.0012f;
         if (candy < 0) candy = 0;
     }
 
