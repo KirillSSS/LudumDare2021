@@ -7,9 +7,16 @@ public class Enemies : MonoBehaviour
     [SerializeField] private float speed = 5f;
     [SerializeField] private float walkRange = 5f;
     [SerializeField] private float walkDistance = 2f;
-    [SerializeField] private int health = 5;
+    public float health = 5, healthMax;
+    private bool inDam;
 
     private GameObject player;
+
+    /* public GameObject HPbarPrefab;
+     public Transform CanvasTransform;
+     public Transform HPbarAbchor;
+     private EnemiesHpBar _hpBar;*/
+    public Transform image;
 
     private bool isInWrongPos = false;
     private bool isAttacking = false;
@@ -23,6 +30,7 @@ public class Enemies : MonoBehaviour
     private Rigidbody2D rb;
     private float progress;
     private Animator anim;
+    private float x1;
 
     [SerializeField] private GameObject character;
 
@@ -30,15 +38,33 @@ public class Enemies : MonoBehaviour
 
     public void getDamaged()
     {
-        health--;
-        if (health == 0)
+        health -= 0.01f;
+        if (health <= 0f)
         {
+            //Destroy(_hpBar);
             Destroy(gameObject);
         }
+        //Debug.Log(image.localScale.x * (health / healthMax));
+        image.localScale = new Vector3(x1 * (health / healthMax), image.localScale.y, 1f);
+        //image.localScale.Set(image.localScale.x * (health / healthMax), 1f, 1f);
+        //_hpBar.UpdateBar();
+        
+    }
+
+    private void Awake()
+    {
+        healthMax = health;
+        x1 = image.localScale.x;
+        /*CanvasTransform = GameObject.Find("Canvas").GetComponent<Transform>();
+        healthMax = health;
+        var bar = Instantiate(HPbarPrefab, CanvasTransform);
+        _hpBar = bar.GetComponent<EnemiesHpBar>();
+        _hpBar.Initialize(HPbarAbchor, this);*/
     }
 
     private void Start()
     {
+        
         rb = this.GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
@@ -56,7 +82,8 @@ public class Enemies : MonoBehaviour
     }
 
     private void Update()
-    {   
+    {
+        
         if (Vector2.Distance(player.transform.position, transform.position) <= walkRange)
         {
             dir = player.transform.position - transform.position;
@@ -139,7 +166,7 @@ public class Enemies : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)
+    private void OnTriggerStay2D(Collider2D collider)
     {
         if (collider.tag == "Minus")
         {

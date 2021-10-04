@@ -7,7 +7,7 @@ public class Paues_end : MonoBehaviour
 {
 
     public bool PauseGame, end;
-    public GameObject pauseGameMenu, endOfGamePerson, endOfGameBoiler, win_end;
+    public GameObject pauseGameMenu, endOfGamePerson, endOfGameBoiler, win_end, option;
 
     void Update()
     {
@@ -30,6 +30,7 @@ public class Paues_end : MonoBehaviour
         pauseGameMenu.SetActive(false);
         Time.timeScale = 1f;
         PauseGame = false;
+        option.SetActive(false);
 
     }
 
@@ -61,6 +62,12 @@ public class Paues_end : MonoBehaviour
         Time.timeScale = 0;
         end = true;
 
+    }
+
+    public void loadMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Menu");
     }
 
 }

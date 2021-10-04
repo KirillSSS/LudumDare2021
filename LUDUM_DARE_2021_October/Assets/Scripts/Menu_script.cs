@@ -10,11 +10,16 @@ public class Menu_script : MonoBehaviour
 
     public void SetVolume(float volume)
     {
+        float f;
         audioMixer.SetFloat("volume", Mathf.Log10(volume) * 20);
+        audioMixer.GetFloat("volume", out f);
+        Debug.Log(volume);
+        Debug.Log(Mathf.Log10(volume) * 20);
     }
 
     public void SetQuality(int qualityIndex)
     {
+        Time.timeScale = 1f;
         QualitySettings.SetQualityLevel(qualityIndex);
     }
 

@@ -341,8 +341,12 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/VSSettingsProvider.ref.dll"
 "Assets/Scripts/AddCandy.cs"
+"Assets/Scripts/audioStart.cs"
 "Assets/Scripts/CameraController.cs"
+"Assets/Scripts/CandiesSpawner.cs"
+"Assets/Scripts/Candy.cs"
 "Assets/Scripts/Enemies.cs"
+"Assets/Scripts/EnemiesHpBar.cs"
 "Assets/Scripts/Enemies_dop.cs"
 "Assets/Scripts/Hero.cs"
 "Assets/Scripts/Menu_script.cs"
@@ -350,6 +354,7 @@
 "Assets/Scripts/Play_Button.cs"
 "Assets/Scripts/PortalEnemies.cs"
 "Assets/Scripts/PortalSpawner.cs"
+"Assets/Scripts/Script.cs"
 "Assets/Scripts/Torch.cs"
 -langversion:8.0
 

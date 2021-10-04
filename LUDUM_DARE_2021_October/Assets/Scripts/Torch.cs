@@ -62,6 +62,7 @@ public class Torch : MonoBehaviour
                 State = state.TorchIdle;
             }
         }
+        //Debug.Log(candy);
     }
     /*private void OnTriggerStay2D(Collider2D collision)
     {

@@ -208,6 +208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 216242137}
   - component: {fileID: 216242138}
+  - component: {fileID: 216242139}
   m_Layer: 5
   m_Name: SliderVolume
   m_TagString: Untagged
@@ -284,7 +285,7 @@ MonoBehaviour:
   m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.2
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -300,6 +301,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &216242139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216242136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407063f6038e0ef4192b8d8a23bfbef1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 5dff2da2555faed4aa223ded085bc41b, type: 2}
 --- !u!1 &322259362
 GameObject:
   m_ObjectHideFlags: 0
@@ -2831,7 +2845,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 5dff2da2555faed4aa223ded085bc41b, type: 2}
   m_audioClip: {fileID: 8300000, guid: ba0d44eb79cf4534f8e05142a8e3d0c1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0

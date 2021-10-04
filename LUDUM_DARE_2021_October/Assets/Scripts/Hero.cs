@@ -10,9 +10,11 @@ public class Hero : MonoBehaviour
 
     public int candy = 0, candyMax;
 
-    [SerializeField] private GameObject Pause_menu, Score, ScoreBoiler, Boiler;
+    [SerializeField] private GameObject Pause_menu, Score, ScoreBoiler, Boiler, space, torch, scoreTorch;
     //GameObject Score = GameObject.Find("Score_text");
     private Paues_end end;
+    private bool inBoiler = false, inAdd = false;
+    private Collider2D coll;
     //private Score_te score;
 
 
@@ -79,7 +81,7 @@ public class Hero : MonoBehaviour
 
     private void giveBoiler()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (inBoiler)
         {
             if (candy > 0)
             {
@@ -90,11 +92,24 @@ public class Hero : MonoBehaviour
             }
         }
     }
+    private void addTourch()
+    {
+        if(inAdd==true && candy > 0)
+        {
+            Debug.Log("Kek");
+            Debug.Log(coll.gameObject.GetComponent<AddCandy>().candy);
+            coll.gameObject.GetComponent<AddCandy>().add();
+            
+            scoreTorch.GetComponent<Text>().text = coll.gameObject.GetComponent<AddCandy>().candy.ToString();
+            candy--;
+        }
+    }
 
    
 
     private void Awake()
     {
+        Time.timeScale = 1f;
         Debug.Log("lol");
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -125,11 +140,59 @@ public class Hero : MonoBehaviour
             }
 
         }
-        
+
+    }
+    
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        /*if (collision.tag == "Pentagram")
+        {
+            giveBoiler();
+        }*/
+
+        if (collision.tag == "Add")
+        {
+            if (Input.GetKeyDown(KeyCode.Space) && candy > 0)
+            {
+                candy--;
+                Score.GetComponent<Text>().text = candy.ToString() + "/" + candyMax.ToString();
+                collision.gameObject.GetComponent<AddCandy>().add();
+            }
+        }
+
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Pentagram")
+        {
+            inBoiler = false;
+            space.SetActive(false);
+        }
+
+        if (collision.tag == "Add")
+        {
+            inAdd = false;
+            //coll = collider;
+            torch.SetActive(false);
+            scoreTorch.SetActive(false);
+            space.SetActive(false);
+
+        }
+
+
+
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log(collider.tag);
+
+        if (collider.tag == "Pentagram")
+        {
+            inBoiler = true;
+            space.SetActive(true);
+        }
+
+        //Debug.Log(collider.tag);
         if (collider.tag == "Candy")
         {
             //Debug.Log("Hello");
@@ -139,31 +202,30 @@ public class Hero : MonoBehaviour
                 Destroy(collider.gameObject);
             }
         }
-        if (collider.tag == "Pentagram")
-        {
-            giveBoiler();
-        }
-
         if (collider.tag == "Add")
         {
-            if (Input.GetKeyDown(KeyCode.Space) && candy > 0)
-            {
-                candy--;
-                Score.GetComponent<Text>().text = candy.ToString() + "/" + candyMax.ToString();
-                collider.gameObject.GetComponent<AddCandy>().add();
-            }
+            inAdd = true;
+            space.SetActive(true);
+            coll = collider;
+            torch.SetActive(true);
+            scoreTorch.SetActive(true);
+            //Debug.Log(collider.gameObject.GetComponent<AddCandy>().candy);
+            scoreTorch.GetComponent<Text>().text = coll.gameObject.GetComponent<AddCandy>().candy.ToString();
+
         }
+
 
     }
 
     private void Update()
     {
         State = States.idle;
+        Score.GetComponent<Text>().text = candy.ToString() + "/" + candyMax.ToString();
         //Debug.Log("kek");
         if (Input.GetButton("Vertical")) runVertical();
         if (Input.GetButton("Horizontal")) runHorizontal();
-
-
+        if (Input.GetKeyDown(KeyCode.Space)) giveBoiler();
+        if (Input.GetKeyDown(KeyCode.Space)) addTourch();
     }
 
     private void FixedUpdate()
