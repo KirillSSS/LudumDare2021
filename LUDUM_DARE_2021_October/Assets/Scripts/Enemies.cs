@@ -32,7 +32,7 @@ public class Enemies : MonoBehaviour
     private Animator anim;
     private float x1;
 
-    [SerializeField] private GameObject character;
+    //[SerializeField] private GameObject character;
 
     [SerializeField] private SpriteRenderer sprite;
 
@@ -219,12 +219,12 @@ public class Enemies : MonoBehaviour
     }
 
 
-    private IEnumerator Died()
-    {
-        print("BBBBBBBBBBBBBBBBBBBBBBBBBBBB");
-        yield return new WaitForSeconds(5f);
-        Instantiate(character, startPosition, Quaternion.identity);
-    }
+    //private IEnumerator Died()
+    //{
+    //    print("BBBBBBBBBBBBBBBBBBBBBBBBBBBB");
+    //    yield return new WaitForSeconds(5f);
+    //    Instantiate(character, startPosition, Quaternion.identity);
+    //}
     private IEnumerator Wait()
     {
         yield return new WaitForSeconds(50f);

@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.2147687, g: 0.7830189, b: 0.18098079, a: 1}
   m_FlipX: 0
@@ -146,13 +146,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2bea88acdbafe541a5c57562b27eebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.6
-  walkRange: 3
+  speed: 1.25
+  walkRange: 4
   walkDistance: 1
   health: 5
   healthMax: 0
   image: {fileID: 2839515946423103723}
-  character: {fileID: 0}
   sprite: {fileID: 5425329248001463797}
 --- !u!50 &5425329247168013755
 Rigidbody2D:
@@ -263,7 +262,7 @@ Animator:
   m_GameObject: {fileID: 5425329247168013759}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b4b44629be0be26469387df3609b9ae0, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5c0b2c20b3d5dd148bed3c57390eb919, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -297,7 +296,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5425329248001463796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5425329247168013753}
@@ -380,7 +379,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6248032128628326170}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.01, y: 0.233, z: 0}
+  m_LocalPosition: {x: 0.01, y: 0.233, z: -0.5}
   m_LocalScale: {x: 0.27628785, y: 0.04804297, z: 1}
   m_Children: []
   m_Father: {fileID: 5425329247168013753}
@@ -426,7 +425,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.6792453, g: 0.0032039948, b: 0.008506198, a: 1}
   m_FlipX: 0

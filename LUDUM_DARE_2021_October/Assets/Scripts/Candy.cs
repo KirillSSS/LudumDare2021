@@ -10,6 +10,6 @@ public class Candy : MonoBehaviour
     {
         candiesSpawner = GameObject.Find("Boiler").GetComponent<CandiesSpawner>();
         print("candy" + gameObject.name + gameObject.transform.position);
-        candiesSpawner.Spawn();
+        candiesSpawner.Spawn(gameObject.transform.position);
     }
 }

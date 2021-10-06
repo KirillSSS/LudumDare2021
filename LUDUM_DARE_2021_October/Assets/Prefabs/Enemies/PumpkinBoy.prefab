@@ -63,13 +63,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2bea88acdbafe541a5c57562b27eebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.6
-  walkRange: 3
+  speed: 1.25
+  walkRange: 4
   walkDistance: 1
   health: 5
   healthMax: 0
   image: {fileID: 1529509092311874640}
-  character: {fileID: 0}
   sprite: {fileID: 2774300557071812290}
 --- !u!50 &2774300556171468841
 Rigidbody2D:
@@ -180,7 +179,7 @@ Animator:
   m_GameObject: {fileID: 2774300556171468845}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c2467387b7bacd042883131916d315e9, type: 2}
+  m_Controller: {fileID: 9100000, guid: a24c31361aca118499e3bded60419ffb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -214,7 +213,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2774300557071812289}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2774300556171468843}
@@ -343,7 +342,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.2147687, g: 0.7830189, b: 0.18098079, a: 1}
   m_FlipX: 0
@@ -380,7 +379,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8645454503072567887}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.029, y: 0.195, z: 0}
+  m_LocalPosition: {x: -0.029, y: 0.195, z: -0.5}
   m_LocalScale: {x: 0.2762875, y: 0.0480425, z: 1}
   m_Children: []
   m_Father: {fileID: 2774300556171468843}
@@ -426,7 +425,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.6792453, g: 0.0032039948, b: 0.008506198, a: 1}
   m_FlipX: 0

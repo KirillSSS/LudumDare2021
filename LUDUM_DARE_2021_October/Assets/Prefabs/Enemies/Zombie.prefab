@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.2147687, g: 0.7830189, b: 0.18098079, a: 1}
   m_FlipX: 0
@@ -108,7 +108,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5130563868333040062}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0029999614, y: 0.21700001, z: 0}
+  m_LocalPosition: {x: -0.0029999614, y: 0.21700001, z: -0.5}
   m_LocalScale: {x: 0.25701162, y: 0.0446907, z: 1}
   m_Children: []
   m_Father: {fileID: 8017954884602822556}
@@ -154,7 +154,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.6792453, g: 0.0032039948, b: 0.008506198, a: 1}
   m_FlipX: 0
@@ -229,13 +229,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2bea88acdbafe541a5c57562b27eebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.6
-  walkRange: 3
+  speed: 1.25
+  walkRange: 4
   walkDistance: 1
   health: 5
   healthMax: 0
   image: {fileID: 3148526762180169833}
-  character: {fileID: 0}
   sprite: {fileID: 8017954886093359395}
 --- !u!50 &8017954884602822558
 Rigidbody2D:
@@ -346,7 +345,7 @@ Animator:
   m_GameObject: {fileID: 8017954884602822546}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 014ee27bc2562034498053cdd33bafcb, type: 2}
+  m_Controller: {fileID: 9100000, guid: c85f33bb5d0ff6249b8dba2d81eb7dd5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -380,7 +379,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8017954886093359396}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8017954884602822556}

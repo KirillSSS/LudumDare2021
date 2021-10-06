@@ -229,7 +229,7 @@ public class Hero : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) giveBoiler();
         if (Input.GetKeyDown(KeyCode.Space)) addTourch();
 
-        if (candy == candyMax)
+        if (boilCand == boilCandMax)
             win.SetActive(true);
     }
 

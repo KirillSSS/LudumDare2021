@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.2147687, g: 0.7830189, b: 0.18098079, a: 1}
   m_FlipX: 0
@@ -108,7 +108,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6606305638610144412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6606305640219365134}
@@ -229,13 +229,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2bea88acdbafe541a5c57562b27eebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.6
-  walkRange: 3
+  speed: 1.25
+  walkRange: 4
   walkDistance: 1
   health: 5
   healthMax: 0
   image: {fileID: 1080548529889978379}
-  character: {fileID: 0}
   sprite: {fileID: 6606305638610144413}
 --- !u!50 &6606305640219365120
 Rigidbody2D:
@@ -346,7 +345,7 @@ Animator:
   m_GameObject: {fileID: 6606305640219365124}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c208a729bd21f554f9b555464fd70143, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5fa0c74366a76974b8f08344a817e5a5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -380,7 +379,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8302475965650680139}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.008000016, y: 0.21600002, z: 0}
+  m_LocalPosition: {x: -0.008000016, y: 0.21600002, z: -0.5}
   m_LocalScale: {x: 0.2762875, y: 0.0480425, z: 1}
   m_Children: []
   m_Father: {fileID: 6606305640219365134}
@@ -426,7 +425,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.6792453, g: 0.0032039948, b: 0.008506198, a: 1}
   m_FlipX: 0

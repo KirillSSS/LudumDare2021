@@ -24,7 +24,6 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
-    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintPaletteClipboard
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
@@ -45,8 +44,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -83,6 +84,8 @@ ScriptsOnlyBuild:
     - Class: 50
       Script: {instanceID: 0}
     - Class: 58
+      Script: {instanceID: 0}
+    - Class: 60
       Script: {instanceID: 0}
     - Class: 61
       Script: {instanceID: 0}
@@ -966,7 +969,7 @@ ScriptsOnlyBuild:
     className: AddCandy
   - hash:
       serializedVersion: 2
-      Hash: 9960a29ed2545abc6ff2d719b1aedb2a
+      Hash: e01eaa3f9f7f84d82d50c0f5b7089181
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Enemies
