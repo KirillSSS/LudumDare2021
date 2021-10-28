@@ -26,7 +26,7 @@ public class CandiesSpawner : MonoBehaviour
 
     private IEnumerator SpawnCandies(Vector3 pos)
     {
-        yield return new WaitForSeconds(spawnDelay);
+        yield return new WaitForSecondsRealtime(spawnDelay);
         int[] p = new int[candySpawner.Length];
         int o = 0;
 

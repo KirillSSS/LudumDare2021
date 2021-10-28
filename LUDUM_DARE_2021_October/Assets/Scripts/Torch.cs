@@ -59,6 +59,7 @@ public class Torch : MonoBehaviour
                 State = state.TorchLight;
             } else
             {
+                torch.intensity = 0;
                 State = state.TorchIdle;
             }
         }

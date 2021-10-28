@@ -6,13 +6,14 @@ using UnityEngine.SceneManagement;
 public class Paues_end : MonoBehaviour
 {
 
-    public bool PauseGame, end;
-    public GameObject pauseGameMenu, endOfGamePerson, endOfGameBoiler, win_end, option;
+    public bool PauseGame, end, sp;
+    public GameObject pauseGameMenu, endOfGamePerson, endOfGameBoiler, win_end, option, space;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !end)
         {
+            
             Debug.Log("lol");
             if (PauseGame)
             {
@@ -22,6 +23,7 @@ public class Paues_end : MonoBehaviour
             {
                 Pause();
             }
+            
         }
     }
 
@@ -31,11 +33,14 @@ public class Paues_end : MonoBehaviour
         Time.timeScale = 1f;
         PauseGame = false;
         option.SetActive(false);
+        space.SetActive(sp);
 
     }
 
     public void Pause()
     {
+        sp = space.activeSelf;
+        space.SetActive(false);
         pauseGameMenu.SetActive(true);
         Time.timeScale = 0;
         PauseGame = true;

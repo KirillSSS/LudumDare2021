@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: -3601043704560858538, guid: cbffe37cab17dff45aadddc052c6b019, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -92,6 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3829960762310735838}
+  - component: {fileID: 980283825400177868}
   - component: {fileID: 5100195232060749996}
   - component: {fileID: 2860607940043710764}
   m_Layer: 0
@@ -116,6 +117,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &980283825400177868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3230191439722672876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64f69ce96b9447e43a28c97ef2632100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &5100195232060749996
 Rigidbody2D:
   serializedVersion: 4

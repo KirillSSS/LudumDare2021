@@ -15,6 +15,10 @@ ScriptsOnlyBuild:
     - PortalSpawner
     - Torch
     - audioStart
+    - timeWave
+    - zStart
+    - zTorchHero
+    - zUpdate
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
@@ -24,6 +28,7 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
+    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintPaletteClipboard
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
@@ -114,57 +119,65 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1530}
     - Class: 114
-      Script: {instanceID: 2040}
+      Script: {instanceID: 1800}
     - Class: 114
-      Script: {instanceID: 2630}
+      Script: {instanceID: 2042}
     - Class: 114
-      Script: {instanceID: 2676}
+      Script: {instanceID: 2634}
     - Class: 114
-      Script: {instanceID: 2852}
+      Script: {instanceID: 2680}
     - Class: 114
-      Script: {instanceID: 2914}
+      Script: {instanceID: 2856}
     - Class: 114
-      Script: {instanceID: 3184}
+      Script: {instanceID: 2918}
     - Class: 114
-      Script: {instanceID: 3224}
+      Script: {instanceID: 3188}
     - Class: 114
-      Script: {instanceID: 3828}
+      Script: {instanceID: 3228}
     - Class: 114
-      Script: {instanceID: 4132}
+      Script: {instanceID: 3832}
     - Class: 114
-      Script: {instanceID: 4208}
+      Script: {instanceID: 4136}
     - Class: 114
-      Script: {instanceID: 5380}
+      Script: {instanceID: 4212}
     - Class: 114
-      Script: {instanceID: 5444}
+      Script: {instanceID: 4630}
     - Class: 114
-      Script: {instanceID: 5720}
+      Script: {instanceID: 5386}
     - Class: 114
-      Script: {instanceID: 5846}
+      Script: {instanceID: 5450}
     - Class: 114
-      Script: {instanceID: 5878}
+      Script: {instanceID: 5726}
     - Class: 114
-      Script: {instanceID: 6024}
+      Script: {instanceID: 5852}
     - Class: 114
-      Script: {instanceID: 6196}
+      Script: {instanceID: 5884}
     - Class: 114
-      Script: {instanceID: 6496}
+      Script: {instanceID: 6030}
     - Class: 114
-      Script: {instanceID: 6542}
+      Script: {instanceID: 6202}
     - Class: 114
-      Script: {instanceID: 6758}
+      Script: {instanceID: 6502}
     - Class: 114
-      Script: {instanceID: 6766}
+      Script: {instanceID: 6548}
     - Class: 114
-      Script: {instanceID: 7568}
+      Script: {instanceID: 6764}
     - Class: 114
-      Script: {instanceID: 7664}
+      Script: {instanceID: 6772}
     - Class: 114
-      Script: {instanceID: 7986}
+      Script: {instanceID: 6884}
     - Class: 114
-      Script: {instanceID: 7992}
+      Script: {instanceID: 7576}
     - Class: 114
-      Script: {instanceID: 8486}
+      Script: {instanceID: 7672}
+    - Class: 114
+      Script: {instanceID: 7994}
+    - Class: 114
+      Script: {instanceID: 8000}
+    - Class: 114
+      Script: {instanceID: 8494}
+    - Class: 114
+      Script: {instanceID: 128318}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -219,35 +232,35 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1530}
     - Class: 114
-      Script: {instanceID: 2676}
+      Script: {instanceID: 2680}
     - Class: 114
-      Script: {instanceID: 2914}
+      Script: {instanceID: 2918}
     - Class: 114
-      Script: {instanceID: 3184}
+      Script: {instanceID: 3188}
     - Class: 114
-      Script: {instanceID: 3224}
+      Script: {instanceID: 3228}
     - Class: 114
-      Script: {instanceID: 4132}
+      Script: {instanceID: 4136}
     - Class: 114
-      Script: {instanceID: 4208}
+      Script: {instanceID: 4212}
     - Class: 114
-      Script: {instanceID: 5380}
+      Script: {instanceID: 5386}
     - Class: 114
-      Script: {instanceID: 5444}
+      Script: {instanceID: 5450}
     - Class: 114
-      Script: {instanceID: 5846}
+      Script: {instanceID: 5852}
     - Class: 114
-      Script: {instanceID: 6196}
+      Script: {instanceID: 6202}
     - Class: 114
-      Script: {instanceID: 6758}
+      Script: {instanceID: 6764}
     - Class: 114
-      Script: {instanceID: 6766}
+      Script: {instanceID: 6772}
     - Class: 114
-      Script: {instanceID: 7664}
+      Script: {instanceID: 7672}
     - Class: 114
-      Script: {instanceID: 7986}
+      Script: {instanceID: 7994}
     - Class: 114
-      Script: {instanceID: 7992}
+      Script: {instanceID: 8000}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -328,6 +341,12 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: zStart
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnMouseExitMessageListener
@@ -385,6 +404,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: RawImage
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: zCamera
   - hash:
       serializedVersion: 2
       Hash: cfdd0010efd7b54c2b7512656dbc9119
@@ -753,6 +778,12 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
+      Hash: 4821c991e622f30f412a6d8723530682
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: zTorchHero
+  - hash:
+      serializedVersion: 2
       Hash: fd68d84f33fad85aac38f2739c0ee270
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -921,7 +952,7 @@ ScriptsOnlyBuild:
     className: Text
   - hash:
       serializedVersion: 2
-      Hash: ad49ac019438d824a5ca97a825fd7b49
+      Hash: a93eafbd7110dd4945596b2846da05a3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Paues_end
@@ -933,7 +964,7 @@ ScriptsOnlyBuild:
     className: StateGraphAsset
   - hash:
       serializedVersion: 2
-      Hash: c6005e16595143bca5f7f5a0a3f651fe
+      Hash: 624d35aa68939059adc69779cbb63b8d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PortalSpawner
@@ -1009,6 +1040,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools
     className: BeforeAfterTestCommandState
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: zUpdate
   - hash:
       serializedVersion: 2
       Hash: fc29f975ab35a5033d05bcfda3c82435
@@ -1291,8 +1328,14 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 5113642775da76b783458f751389e14e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: timeWave
   platform: 19
   scenePathNames:
   - Assets/Scenes/main.unity
   - Assets/Scenes/level1.unity
-  playerPath: D:/Games/Mixed Worlds/Mixed Worlds.exe
+  playerPath: C:/LudumDare2021/Build/new2/Mixed Worlds/Mixed Worlds.exe

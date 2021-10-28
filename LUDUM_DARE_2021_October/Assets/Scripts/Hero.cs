@@ -168,7 +168,7 @@ public class Hero : MonoBehaviour
         if (collision.tag == "Pentagram")
         {
             inBoiler = false;
-            space.SetActive(false);
+            //space.SetActive(false);
         }
 
         if (collision.tag == "Add")
@@ -177,7 +177,7 @@ public class Hero : MonoBehaviour
             //coll = collider;
             torch.SetActive(false);
             scoreTorch.SetActive(false);
-            space.SetActive(false);
+            //space.SetActive(false);
 
         }
 
@@ -222,7 +222,10 @@ public class Hero : MonoBehaviour
     {
         State = States.idle;
         Score.GetComponent<Text>().text = candy.ToString() + "/" + candyMax.ToString();
-        scoreTorch.GetComponent<Text>().text = coll.gameObject.GetComponent<AddCandy>().candy.ToString();
+        string s = coll.gameObject.GetComponent<AddCandy>().candy.ToString();
+        int n = s.IndexOf(",");
+        if(n>0) s = s.Substring(0, n + 2);
+        scoreTorch.GetComponent<Text>().text = s;
         //Debug.Log("kek");
         if (Input.GetButton("Vertical")) runVertical();
         if (Input.GetButton("Horizontal")) runHorizontal();
@@ -231,6 +234,8 @@ public class Hero : MonoBehaviour
 
         if (boilCand == boilCandMax)
             win.SetActive(true);
+
+        if (!inAdd && !inBoiler) space.SetActive(false);
     }
 
     private void FixedUpdate()

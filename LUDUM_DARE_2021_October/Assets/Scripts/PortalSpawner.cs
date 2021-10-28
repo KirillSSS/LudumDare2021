@@ -10,6 +10,7 @@ public class PortalSpawner : MonoBehaviour
     [SerializeField] private float personDelay;
     [SerializeField] private int enemiesInOneWave;
     [SerializeField] private int waves;
+    [SerializeField] private GameObject timer;
 
     private int currentEnemyIndex = 0;
     private int currentWaveIndex;
@@ -31,11 +32,14 @@ public class PortalSpawner : MonoBehaviour
         if (enemiesLeftToSpawn > 0)
         {
             //print(isFirst);
-            
-            if(isFirst)
-                yield return new WaitForSeconds(spawnDelay);
+
+            if (isFirst)
+            {
+                timer.GetComponent<timeWave>().startTimer(spawnDelay);
+                yield return new WaitForSecondsRealtime(spawnDelay*1.35f);
+            }
             else
-                yield return new WaitForSeconds(personDelay);
+                yield return new WaitForSecondsRealtime(personDelay);
 
             //print(enemy.Length + " ----> " + currentEnemyIndex);
             //print(enemy.Length + " ====> " + currentSpawnerIndex);
